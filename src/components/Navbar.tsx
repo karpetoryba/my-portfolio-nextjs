@@ -9,9 +9,9 @@ export default function Navbar() {
         </Link>
         <ul className="flex items-center gap-8 text-lg">
           <li>
-            <a href="#about" className="text-black transition-colors hover:text-black">
+            <Link href="/about" className="text-black transition-colors hover:text-black">
               About me
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#projects" className="text-black transition-colors hover:text-black">
