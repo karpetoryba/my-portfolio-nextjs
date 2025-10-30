@@ -14,9 +14,9 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="#projects" className="text-black transition-colors hover:text-black">
+            <Link href="/projects" className="text-black transition-colors hover:text-black">
               Projects
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#contact" className="text-black transition-colors hover:text-black">
