@@ -19,9 +19,9 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="#contact" className="text-black transition-colors hover:text-black">
+            <Link href="/contact" className="text-black transition-colors hover:text-black">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
