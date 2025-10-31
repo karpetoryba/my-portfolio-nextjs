@@ -11,7 +11,7 @@ export default function Navbar() {
           <li>
             <Link 
               href="/about" 
-              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
             >
               About me
             </Link>
@@ -19,7 +19,7 @@ export default function Navbar() {
           <li>
             <Link 
               href="/projects" 
-              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
             >
               Projects
             </Link>
@@ -27,7 +27,7 @@ export default function Navbar() {
           <li>
             <Link 
               href="/contact" 
-              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
             >
               Contact
             </Link>
