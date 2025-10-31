@@ -3,9 +3,23 @@ import Footer from "@/components/Footer";
 export default function AboutPage() {
   return (
     <>
-      <main className="container mx-auto px-4 py-16">
+      <main className="relative container mx-auto px-4 py-16">
+        {/* Background accents */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* soft grid overlay with fade */}
+          <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,rgba(0,0,0,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.7)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+          {/* gradient blobs */}
+          <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-sky-200 via-violet-200 to-pink-200" />
+          <div className="absolute -bottom-32 -right-16 h-72 w-72 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-fuchsia-200 via-rose-200 to-amber-200" />
+          <div className="absolute top-1/3 -right-24 h-64 w-64 rounded-full blur-3xl opacity-30 bg-gradient-to-tr from-cyan-200 via-indigo-200 to-purple-200" />
+        </div>
+
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-8">About Me</h1>
+          <div className="mb-10">
+            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight">About Me</h1>
+            {/* glowing underline */}
+            <div className="mt-3 h-2 w-40 rounded-full bg-white/60 blur-md" />
+          </div>
           
           <div className="space-y-6 text-lg leading-relaxed">
             <p>
@@ -15,10 +29,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300">
+          <div className="mt-12 pt-8 border-t border-neutral-300/70">
             <h2 className="text-3xl font-semibold mb-6">Technical Skills</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              <div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-5 border border-neutral-200/70 shadow-sm">
                 <h3 className="font-semibold mb-3">Frontend</h3>
                 <ul className="space-y-1 text-neutral-600">
                   <li>React</li>
@@ -28,7 +42,7 @@ export default function AboutPage() {
                   <li>Tailwind CSS</li>
                 </ul>
               </div>
-              <div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-5 border border-neutral-200/70 shadow-sm">
                 <h3 className="font-semibold mb-3">Backend</h3>
                 <ul className="space-y-1 text-neutral-600">
                   <li>Node.js</li>
@@ -38,7 +52,7 @@ export default function AboutPage() {
                   <li>RESTful APIs</li>
                 </ul>
               </div>
-              <div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-5 border border-neutral-200/70 shadow-sm">
                 <h3 className="font-semibold mb-3">Tools & Methods</h3>
                 <ul className="space-y-1 text-neutral-600">
                   <li>Docker</li>
@@ -51,10 +65,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300">
+          <div className="mt-12 pt-8 border-t border-neutral-300/70">
             <h2 className="text-3xl font-semibold mb-4">Experience</h2>
             <div className="space-y-6">
-              <div>
+              <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h3 className="text-xl font-semibold">Full Stack Developer</h3>
                 <p className="text-neutral-600 font-medium">GardenUno • Périgueux, France</p>
                 <p className="text-neutral-600 italic">Apr - Aug 2025</p>
@@ -64,7 +78,7 @@ export default function AboutPage() {
                   <li>• Managed Jira workflow and Agile sprint cycles</li>
                 </ul>
               </div>
-              <div>
+              <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h3 className="text-xl font-semibold">Web Developer</h3>
                 <p className="text-neutral-600 font-medium">Incubateur H24 • Périgueux, France</p>
                 <p className="text-neutral-600 italic">Feb - Apr 2024</p>
@@ -77,15 +91,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300">
+          <div className="mt-12 pt-8 border-t border-neutral-300/70">
             <h2 className="text-3xl font-semibold mb-4">Education</h2>
             <div className="space-y-4">
-              <div>
+              <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
                 <h3 className="text-xl font-semibold">Bachelor Web Developer</h3>
                 <p className="text-neutral-600 font-medium">École Supérieure du Digital • Bordeaux, France</p>
                 <p className="text-neutral-600 italic">Sep 2023 - Aug 2026</p>
               </div>
-              <div>
+              <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
                 <h3 className="text-xl font-semibold">Bachelor of Law</h3>
                 <p className="text-neutral-600 font-medium">Kuban State University • Krasnodar, Russia</p>
                 <p className="text-neutral-600 italic">Sep 2019 - Aug 2023</p>
