@@ -13,17 +13,6 @@ export default function AboutPage() {
               at École Supérieure du Digital in Bordeaux. I specialize in building scalable applications 
               using modern JavaScript frameworks and cloud technologies.
             </p>
-            
-            <p>
-              My professional journey includes a Full Stack Developer position at GardenUno, where I developed 
-              Node.js backends and React Native mobile apps, following Agile methodologies. I've also worked 
-              as a Web Developer at Incubateur H24, creating WordPress solutions and implementing web scraping systems.
-            </p>
-            
-            <p>
-              With fluency in French (C2), Russian (C2), and English (B1), I bring international perspective 
-              to every project. I'm passionate about clean architecture, mobile development, and continuous learning.
-            </p>
           </div>
 
           <div className="mt-12 pt-8 border-t border-neutral-300">
