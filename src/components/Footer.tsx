@@ -40,17 +40,30 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="https://github.com/karpetoryba" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-black transition-colors"
+                >
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="#" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="https://www.linkedin.com/in/karpetoryba/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-black transition-colors"
+                >
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="mailto:daria.karpenko@mail-esd.com"
+                  className="text-neutral-600 hover:text-black transition-colors"
+                >
                   Email
                 </a>
               </li>
