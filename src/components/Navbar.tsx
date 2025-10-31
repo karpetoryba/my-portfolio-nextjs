@@ -2,24 +2,33 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent">
-      <nav className="mx-auto flex w-full items-center justify-between px-4 py-4">
-        <Link href="/" className="text-2xl font-bold tracking-tight text-black">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/30 border-b border-neutral-100">
+      <nav className="mx-auto flex w-full items-center justify-between px-6 py-5 max-w-7xl">
+        <Link href="/" className="text-2xl font-bold tracking-tight text-black hover:opacity-80 transition-opacity">
           Portfolio
         </Link>
-        <ul className="flex items-center gap-8 text-lg">
+        <ul className="flex items-center gap-10 text-base font-medium">
           <li>
-            <Link href="/about" className="text-black transition-colors hover:text-black">
+            <Link 
+              href="/about" 
+              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+            >
               About me
             </Link>
           </li>
           <li>
-            <Link href="/projects" className="text-black transition-colors hover:text-black">
+            <Link 
+              href="/projects" 
+              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+            >
               Projects
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-black transition-colors hover:text-black">
+            <Link 
+              href="/contact" 
+              className="text-neutral-700 hover:text-black transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all hover:after:w-full"
+            >
               Contact
             </Link>
           </li>
