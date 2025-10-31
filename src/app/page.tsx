@@ -1,7 +1,16 @@
+"use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  useEffect(() => {
+    document.body.classList.add("overflow-hidden");
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, []);
+
   return (
     <main className="overflow-hidden">
       {/* Hero section full-screen, edge-to-edge */}
@@ -12,7 +21,7 @@ export default function Home() {
             alt="Hero"
             fill
             priority
-            className="object-contain"
+            className="object-contain -translate-y-6 sm:-translate-y-8 md:-translate-y-10 lg:-translate-y-12"
             sizes="100vw"
           />
           {/* overlay removed to avoid white glow */}
