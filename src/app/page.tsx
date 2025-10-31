@@ -3,17 +3,17 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       {/* Hero section full-screen, edge-to-edge */}
-      <section className="relative isolate w-full h-screen">
-        <div className="relative h-full w-full overflow-hidden">
+      <section className="relative isolate w-full h-screen overflow-hidden">
+        <div className="relative h-full w-full flex items-center justify-center">
           <Image
             src="/img-home.png"
             alt="Hero"
             fill
             priority
-            className="object-cover object-[center_30%]"
-            sizes="(max-width: 1000px) 100vw, 2800px"
+            className="object-contain"
+            sizes="100vw"
           />
           {/* overlay removed to avoid white glow */}
           <div className="absolute inset-x-4 bottom-8 z-10 select-none xs:inset-x-6 xs:bottom-12 sm:inset-x-8 sm:bottom-16 md:bottom-20">
