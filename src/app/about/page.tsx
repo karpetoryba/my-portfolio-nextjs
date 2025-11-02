@@ -7,7 +7,7 @@ export default function AboutPage() {
         {/* Background accents */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           {/* soft grid overlay with fade */}
-          <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,rgba(0,0,0,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.7)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+          <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(0,0,0,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.7)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         </div>
 
         <div className="max-w-3xl mx-auto">
