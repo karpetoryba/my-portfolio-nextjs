@@ -25,9 +25,9 @@ export default function Home() {
             sizes="100vw"
           />
           {/* overlay removed to avoid white glow */}
-          <div className="absolute inset-x-4 bottom-16 z-10 select-none xs:inset-x-6 xs:bottom-20 sm:inset-x-8 sm:bottom-24 md:bottom-32">
+          <div className="absolute left-28 right-4 bottom-16 z-10 select-none xs:left-36 xs:right-6 xs:bottom-20 sm:left-48 sm:right-8 sm:bottom-24 md:left-64 md:bottom-32">
             <p className="text-[20vw] font-black tracking-tighter leading-[0.9] text-black sm:text-[14vw] md:text-[12vw] lg:text-[9vw] mb-2">
-              I'am
+              I'm&nbsp;&nbsp;&nbsp;a
             </p>
             <h1 className="text-[20vw] font-black tracking-tighter leading-[0.9] text-black sm:text-[14vw] md:text-[12vw] lg:text-[9vw] text-glow-white">
               Web Developer

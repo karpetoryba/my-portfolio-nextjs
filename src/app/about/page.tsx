@@ -19,7 +19,7 @@ export default function AboutPage() {
           
           <div className="space-y-6 text-lg leading-relaxed">
             <p>
-              I'm Daria Karpenko, a full-stack developer currently pursuing a Bachelor's in Web Development 
+              I'm Daria Karpenko, a full-stack developer currently pursuing a Bachelor's degree in Web Development 
               at École Supérieure du Digital in Bordeaux. I specialize in building scalable applications 
               using modern JavaScript frameworks and cloud technologies.
             </p>
