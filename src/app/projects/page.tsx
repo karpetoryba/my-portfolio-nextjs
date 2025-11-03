@@ -36,10 +36,10 @@ export default function ProjectsPage() {
       id: 3,
       title: "Task Management App",
       description: "Streamline your workflow with smart task organization and team collaboration tools",
-      image: "/img-home.png",
-      link: "#",
-      github: "#",
-      tech: ["React", "Node.js", "MongoDB"],
+      image: "/Drunk_santa.png",
+      link: "https://drunk-santa.karpenkodaria.com/",
+      github: "https://github.com/ethan-frot/Drunk-Santa",
+      tech: ["React", "Next.js", "Tailwind CSS"],
     },
   ];
 
