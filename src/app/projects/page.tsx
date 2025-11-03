@@ -1,4 +1,5 @@
 import Image from "next/image";
+import drunkSanta from "../../../public/Drunk_santa.png";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import {
@@ -16,30 +17,30 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern online shopping experience with secure payments and seamless user interface",
-      image: "/img-home.png",
+      title: "Blog",
+      description: "A blog website with a modern UI and a secure login system",
+      image: "/Blog.png",
       link: "#",
-      github: "#",
-      tech: ["React", "Next.js", "TypeScript"],
+      github: "https://github.com/karpetoryba/new_Forum_nextjs",
+      tech: ["Next.js", "TypeScript", "Prisma","TypeScript" ],
     },
     {
       id: 2,
       title: "Portfolio Website",
-      description: "Creative portfolio showcase for designers with modern UI and smooth animations",
-      image: "/img-home.png",
+      description: "Creative portfolio showcase for designers with modern UI",
+      image: "/Portfolio_web.png",
       link: "#",
-      github: "#",
-      tech: ["Next.js", "Tailwind CSS"],
+      github: "https://github.com/karpetoryba/my-portfolio-nextjs",
+      tech: ["Next.js", "TypeScript"],
     },
     {
       id: 3,
       title: "Drunk-santa",
       description: "A Christmas game where you must catch snowflakes",
-      image: "/Drunk_santa.png",
+      image: drunkSanta,
       link: "https://drunk-santa.karpenkodaria.com/",
       github: "https://github.com/ethan-frot/Drunk-Santa",
-      tech: ["Next.js", "Prisma", "Phaser 3" , "Docker Compose", "Supabase JS"],
+      tech: ["Next.js", "Prisma", "TypeScript", "Phaser 3" , "Docker Compose", "Supabase JS"],
     },
   ];
 
