@@ -47,7 +47,7 @@ export default function ProjectsPage() {
   return (
     <>
       <main className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-20 md:mb-40">
           <h1 className="text-5xl font-bold mb-4">Projects</h1>
           <p className="text-xl text-neutral-600 mb-12">
             Here are some of my recent projects and works
@@ -99,6 +99,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </main>
+      <div className="mt-12 md:mt-15" />
       <Footer />
     </>
   );
