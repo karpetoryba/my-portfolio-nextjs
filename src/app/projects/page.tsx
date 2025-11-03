@@ -84,13 +84,20 @@ export default function ProjectsPage() {
                 </CardContent>
                 <CardFooter className="flex gap-3">
                   <Link href={project.link} className="flex-1">
-                    <Button className="w-full" variant="default">
+                    <Button 
+                      className="w-full bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 active:scale-[0.98] transition-all duration-200" 
+                      variant="default"
+                    >
                       View Project
                     </Button>
                   </Link>
                   <Link href={project.github}>
-                    <Button variant="outline" size="icon">
-                      <Github className="h-5 w-5" />
+                    <Button 
+                      variant="outline" 
+                      size="icon"
+                      className="group bg-neutral-200/50 backdrop-blur-sm hover:scale-110 active:scale-95 transition-transform duration-200"
+                    >
+                      <Github className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
                     </Button>
                   </Link>
                 </CardFooter>
