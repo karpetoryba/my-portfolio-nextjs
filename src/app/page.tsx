@@ -15,6 +15,12 @@ export default function Home() {
     <main className="overflow-hidden">
       {/* Hero section full-screen, edge-to-edge */}
       <section className="relative isolate w-full h-screen overflow-hidden">
+        {/* Background accents - grid squares */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* soft grid overlay with fade */}
+          <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(0,0,0,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.7)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+        </div>
+
         <div className="relative h-full w-full flex items-center justify-center">
           <Image
             src="/img-home.png"
