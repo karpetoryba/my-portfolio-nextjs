@@ -34,12 +34,12 @@ export default function ProjectsPage() {
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "Streamline your workflow with smart task organization and team collaboration tools",
+      title: "Drunk-santa",
+      description: "A Christmas game where you must catch snowflakes",
       image: "/Drunk_santa.png",
       link: "https://drunk-santa.karpenkodaria.com/",
       github: "https://github.com/ethan-frot/Drunk-Santa",
-      tech: ["React", "Next.js", "Tailwind CSS"],
+      tech: ["Next.js", "Prisma", "Phaser 3" , "Docker Compose", "Supabase JS"],
     },
   ];
 
@@ -55,12 +55,12 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="overflow-hidden h-full flex flex-col">
-                <div className="relative w-full h-56 overflow-hidden">
+                <div className="relative w-full h-56  overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-contain"
+                    className="object-cover object-top"
                   />
                 </div>
                 <CardHeader>
