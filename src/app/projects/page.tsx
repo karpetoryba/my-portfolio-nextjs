@@ -1,4 +1,5 @@
 import Image from "next/image";
+import drunkSanta from "../../../public/Drunk_santa.png";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import {
@@ -16,37 +17,37 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern online shopping experience with secure payments and seamless user interface",
-      image: "/img-home.png",
+      title: "Blog",
+      description: "A blog website with a modern UI and a secure login system",
+      image: "/Blog.png",
       link: "#",
-      github: "#",
-      tech: ["React", "Next.js", "TypeScript"],
+      github: "https://github.com/karpetoryba/new_Forum_nextjs",
+      tech: ["Next.js", "TypeScript", "Prisma","TypeScript" ],
     },
     {
       id: 2,
       title: "Portfolio Website",
-      description: "Creative portfolio showcase for designers with modern UI and smooth animations",
-      image: "/img-home.png",
+      description: "Creative portfolio showcase for designers with modern UI",
+      image: "/Portfolio_web.png",
       link: "#",
-      github: "#",
-      tech: ["Next.js", "Tailwind CSS"],
+      github: "https://github.com/karpetoryba/my-portfolio-nextjs",
+      tech: ["Next.js", "TypeScript"],
     },
     {
       id: 3,
       title: "Drunk-santa",
       description: "A Christmas game where you must catch snowflakes",
-      image: "/Drunk_santa.png",
+      image: drunkSanta,
       link: "https://drunk-santa.karpenkodaria.com/",
       github: "https://github.com/ethan-frot/Drunk-Santa",
-      tech: ["Next.js", "Prisma", "Phaser 3" , "Docker Compose", "Supabase JS"],
+      tech: ["Next.js", "Prisma", "TypeScript", "Phaser 3" , "Docker Compose", "Supabase JS"],
     },
   ];
 
   return (
     <>
       <main className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-20 md:mb-40">
           <h1 className="text-5xl font-bold mb-4">Projects</h1>
           <p className="text-xl text-neutral-600 mb-12">
             Here are some of my recent projects and works
@@ -83,13 +84,20 @@ export default function ProjectsPage() {
                 </CardContent>
                 <CardFooter className="flex gap-3">
                   <Link href={project.link} className="flex-1">
-                    <Button className="w-full" variant="default">
+                    <Button 
+                      className="w-full bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 active:scale-[0.98] transition-all duration-200" 
+                      variant="default"
+                    >
                       View Project
                     </Button>
                   </Link>
                   <Link href={project.github}>
-                    <Button variant="outline" size="icon">
-                      <Github className="h-5 w-5" />
+                    <Button 
+                      variant="outline" 
+                      size="icon"
+                      className="group bg-neutral-200/50 backdrop-blur-sm hover:scale-110 active:scale-95 transition-transform duration-200"
+                    >
+                      <Github className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
                     </Button>
                   </Link>
                 </CardFooter>
@@ -98,6 +106,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </main>
+      <div className="mt-12 md:mt-15" />
       <Footer />
     </>
   );
