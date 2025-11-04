@@ -30,47 +30,32 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="space-y-4 pt-8 border-t border-neutral-300/70">
-              <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  <Mail className="h-5 w-5" />
-                  Email
-                </h3>
-                <a 
-                  href={`mailto:${email}`}
-                  className="text-lg text-neutral-600 hover:text-black transition-colors"
-                >
-                  {email}
-                </a>
-              </div>
+            <div className="space-y-3 pt-8 border-t border-neutral-300/70">
+              <a 
+                href={`mailto:${email}`}
+                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <Mail className="h-4 w-4" />
+                <span className="text-base font-medium">Email</span>
+              </a>
 
-              <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  <Linkedin className="h-5 w-5" />
-                  LinkedIn
-                </h3>
-                <Link 
-                  href="https://www.linkedin.com/in/karpetoryba/" 
-                  target="_blank"
-                  className="text-lg text-neutral-600 hover:text-black transition-colors"
-                >
-                  linkedin.com/in/karpetoryba
-                </Link>
-              </div>
+              <Link 
+                href="https://www.linkedin.com/in/karpetoryba/" 
+                target="_blank"
+                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <Linkedin className="h-4 w-4" />
+                <span className="text-base font-medium">LinkedIn</span>
+              </Link>
 
-              <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  <Github className="h-5 w-5" />
-                  GitHub
-                </h3>
-                <Link 
-                  href="https://github.com/karpetoryba" 
-                  target="_blank"
-                  className="text-lg text-neutral-600 hover:text-black transition-colors"
-                >
-                  github.com/karpetoryba
-                </Link>
-              </div>
+              <Link 
+                href="https://github.com/karpetoryba" 
+                target="_blank"
+                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <Github className="h-4 w-4" />
+                <span className="text-base font-medium">GitHub</span>
+              </Link>
             </div>
           </div>
 
