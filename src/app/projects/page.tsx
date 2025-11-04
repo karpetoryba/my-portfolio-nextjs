@@ -55,7 +55,7 @@ export default function ProjectsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden h-full flex flex-col group">
+              <Card key={project.id} className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <div className="relative w-full h-56 overflow-hidden">
                   <Image
                     src={project.image}
