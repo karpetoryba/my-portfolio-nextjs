@@ -15,10 +15,23 @@ export default function ContactPage() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="mb-10">
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight">Contact</h1>
-            {/* glowing underline */}
-            <div className="mt-3 h-2 w-40 rounded-full bg-white/60 blur-md" />
+          <div className="mb-10 flex items-center justify-between">
+            <div>
+              <h1 className="text-5xl font-bold leading-[1.05] tracking-tight">Contact</h1>
+              {/* glowing underline */}
+              <div className="mt-3 h-2 w-40 rounded-full bg-white/60 blur-md" />
+            </div>
+            <a
+              href="/Karpenko_Daria_CV.png"
+              download="Karpenko_Daria_CV.png"
+              className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/60 backdrop-blur-sm border border-neutral-200/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 group"
+              aria-label="Download CV"
+            >
+              <span className="text-3xl sm:text-4xl animate-float">📄</span>
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-medium text-neutral-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+                Download CV
+              </span>
+            </a>
           </div>
           
           <div className="space-y-8">
