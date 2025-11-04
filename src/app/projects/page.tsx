@@ -106,7 +106,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </main>
-      <div className="mt-12 md:mt-15" />
+      <div className="mt-12 md:mt-10" />
       <Footer />
     </>
   );
