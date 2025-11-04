@@ -29,7 +29,7 @@ export default function ProjectsPage() {
       title: "Portfolio Website",
       description: "Creative portfolio showcase for designers with modern UI",
       image: "/Portfolio_web.png",
-      link: "#",
+      link: "https://portfolio.karpenkodaria.com/",
       github: "https://github.com/karpetoryba/my-portfolio-nextjs",
       tech: ["Next.js", "TypeScript"],
     },
