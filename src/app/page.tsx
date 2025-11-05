@@ -181,7 +181,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300/70">
+          <div className="mt-12 pt-8">
             <h2 className="text-3xl font-semibold mb-6">Technical Skills</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-5 border border-neutral-200/70 shadow-sm">
@@ -217,7 +217,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300/70">
+          <div className="mt-12 pt-8">
             <h2 className="text-3xl font-semibold mb-4">Experience</h2>
             <div className="space-y-6">
               <div className="group rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
@@ -243,7 +243,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300/70">
+          <div className="mt-12 pt-8">
             <h2 className="text-3xl font-semibold mb-4">Education</h2>
             <div className="space-y-4">
               <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
