@@ -7,25 +7,29 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/30 border-b border-neutral-100">
       <nav className="mx-auto flex w-full items-center justify-between px-4 sm:px-6 py-3 sm:py-5 max-w-7xl">
-        <Link href="/" className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-80 transition-opacity">
+        <Link 
+          href="/"
+          className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-80 transition-opacity"
+        >
           Portfolio
         </Link>
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10 text-sm lg:text-base font-medium">
           <li>
             <Link 
-              href="/about" 
-              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
-            >
-              About me
-            </Link>
-          </li>
-          <li>
-            <Link 
-              href="/projects" 
+              href="/projects"
               className="text-neutral-700 hover:text-black hover:font-bold transition-all"
             >
               Projects
@@ -33,7 +37,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link 
-              href="/contact" 
+              href="/contact"
               className="text-neutral-700 hover:text-black hover:font-bold transition-all"
             >
               Contact
@@ -55,16 +59,7 @@ export default function Navbar() {
           <ul className="flex flex-col px-4 py-4 gap-4">
             <li>
               <Link 
-                href="/about" 
-                onClick={() => setIsOpen(false)}
-                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
-              >
-                About me
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/projects" 
+                href="/projects"
                 onClick={() => setIsOpen(false)}
                 className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
               >
@@ -73,7 +68,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link 
-                href="/contact" 
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
               >
