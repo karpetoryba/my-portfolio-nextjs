@@ -264,25 +264,43 @@ export default function Home() {
       {/* View Projects section */}
       <section 
         id="projects" 
-        className={`container mx-auto px-4 py-16 transition-all duration-1000 ease-out ${
+        className={`relative container mx-auto px-4 py-20 md:py-24 overflow-hidden transition-all duration-1000 ease-out ${
           isProjectsVisible 
             ? "opacity-100 translate-y-0" 
             : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">View Projects</h1>
-          <p className="text-xl text-neutral-600 mb-8">
-            Explore my recent work and projects
-          </p>
-          <Link href="/projects">
-            <Button 
-              className="bg-neutral-900 text-white hover:bg-neutral-800 px-8 py-6 text-lg font-semibold transition-all duration-200 hover:scale-105"
-              variant="default"
-            >
-              View All Projects
-            </Button>
-          </Link>
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-neutral-200/20 via-neutral-100/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-neutral-300/15 to-transparent rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-neutral-200/15 to-transparent rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto">
+          <div className="relative">
+            {/* Content */}
+            <div className="text-center mb-10">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+                View Projects
+              </h1>
+              <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                Explore my recent work and projects. Each project represents a unique challenge and creative solution.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex justify-center">
+              <Link href="/projects">
+                <Button 
+                  className="w-full bg-neutral-300/70 backdrop-blur-sm text-black hover:bg-neutral-400/70 active:scale-[0.98] transition-all duration-200 px-8 py-6 text-lg font-semibold"
+                  variant="default"
+                >
+                  View All Projects
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
