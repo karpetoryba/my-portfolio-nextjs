@@ -43,7 +43,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="space-y-3 pt-8 border-t border-neutral-300/70">
+            <div className="space-y-3 pt-8">
               <a 
                 href={`mailto:${email}`}
                 className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
@@ -72,7 +72,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-neutral-300/70">
+          <div className="mt-12 pt-8">
             <h2 className="text-3xl font-semibold mb-4">Availability</h2>
             <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
               <p className="text-lg text-neutral-600">
