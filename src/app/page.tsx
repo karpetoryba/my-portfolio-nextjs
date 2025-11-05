@@ -2,17 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import drunkSanta from "../../public/Drunk_santa.png";
 import Link from "next/link";
-import { Github, Mail, Linkedin } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 
@@ -25,9 +15,9 @@ export default function Home() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       
-      // Начинаем затемнение после 20% прокрутки экрана
+      // Start fading after 20% of screen scroll
       const startFade = windowHeight * 0.2;
-      // Полное исчезновение при прокрутке на 80% экрана
+      // Complete disappearance at 80% of screen scroll
       const endFade = windowHeight * 0.8;
       
       if (scrollPosition <= startFade) {
@@ -37,7 +27,7 @@ export default function Home() {
         setScrollOpacity(0);
         setScrollBlur(20);
       } else {
-        // Плавный переход между startFade и endFade
+        // Smooth transition between startFade and endFade
         const progress = (scrollPosition - startFade) / (endFade - startFade);
         setScrollOpacity(1 - progress);
         setScrollBlur(progress * 20);
@@ -45,41 +35,10 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Вызываем сразу для начальной позиции
+    handleScroll(); // Call immediately for initial position
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const projects = [
-    {
-      id: 1,
-      title: "Blog",
-      description: "A blog website with a modern UI and a secure login system",
-      image: "/Blog.png",
-      link: "#",
-      github: "https://github.com/karpetoryba/new_Forum_nextjs",
-      tech: ["Next.js", "TypeScript", "Prisma","TypeScript" ],
-    },
-    {
-      id: 2,
-      title: "Portfolio Website",
-      description: "Creative portfolio showcase for designers with modern UI",
-      image: "/Portfolio_web.png",
-      link: "https://portfolio.karpenkodaria.com/",
-      github: "https://github.com/karpetoryba/my-portfolio-nextjs",
-      tech: ["Next.js", "TypeScript"],
-    },
-    {
-      id: 3,
-      title: "Drunk-santa",
-      description: "A Christmas game where you must catch snowflakes",
-      image: drunkSanta,
-      link: "https://drunk-santa.karpenkodaria.com/",
-      github: "https://github.com/ethan-frot/Drunk-Santa",
-      tech: ["Next.js", "Prisma", "TypeScript", "Phaser 3" , "Docker Compose", "Supabase JS"],
-    },
-  ];
-
-  const email = "daria.karpenko@mail-esd.com";
 
   return (
     <>
@@ -239,130 +198,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects section */}
+      {/* View Projects section */}
       <section id="projects" className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto mb-8 md:mb-12">
-          <h1 className="text-5xl font-bold mb-4">Projects</h1>
-          <p className="text-xl text-neutral-600 mb-12">
-            Here are some of my recent projects and works
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold mb-4">View Projects</h1>
+          <p className="text-xl text-neutral-600 mb-8">
+            Explore my recent work and projects
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <div className="relative w-full h-56 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-base mb-4">
-                    {project.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-3">
-                  <Link href={project.link} className="flex-1">
-                    <Button 
-                      className="w-full bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 active:scale-[0.98] transition-all duration-200" 
-                      variant="default"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                  <Link href={project.github}>
-                    <Button 
-                      variant="outline" 
-                      size="icon"
-                      className="group bg-neutral-200/50 backdrop-blur-sm hover:scale-110 active:scale-95 transition-transform duration-200"
-                    >
-                      <Github className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact section */}
-      <section id="contact" className="relative container mx-auto px-4 py-16">
-        {/* Background accents */}
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          {/* soft grid overlay with fade */}
-          <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(0,0,0,0.7)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.7)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          <div className="mb-10">
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight">Contact</h1>
-            {/* glowing underline */}
-            <div className="mt-3 h-2 w-40 rounded-full bg-white/60 blur-md" />
-          </div>
-          
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-              <p className="text-lg leading-relaxed text-neutral-600">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                Feel free to reach out through any of the channels below.
-              </p>
-            </div>
-
-            <div className="space-y-3 pt-8 border-t border-neutral-300/70">
-              <a 
-                href={`mailto:${email}`}
-                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <Mail className="h-4 w-4" />
-                <span className="text-base font-medium">Email</span>
-              </a>
-
-              <Link 
-                href="https://www.linkedin.com/in/karpetoryba/" 
-                target="_blank"
-                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span className="text-base font-medium">LinkedIn</span>
-              </Link>
-
-              <Link 
-                href="https://github.com/karpetoryba" 
-                target="_blank"
-                className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <Github className="h-4 w-4" />
-                <span className="text-base font-medium">GitHub</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-neutral-300/70">
-            <h2 className="text-3xl font-semibold mb-4">Availability</h2>
-            <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
-              <p className="text-lg text-neutral-600">
-                Seeking a web developer apprenticeship for one year with a rhythm of 4 days in company, 1 day at school. 
-                I typically respond within 24-48 hours.
-              </p>
-            </div>
-          </div>
+          <Link href="/projects">
+            <Button 
+              className="bg-neutral-900 text-white hover:bg-neutral-800 px-8 py-6 text-lg font-semibold transition-all duration-200 hover:scale-105"
+              variant="default"
+            >
+              View All Projects
+            </Button>
+          </Link>
         </div>
       </section>
 

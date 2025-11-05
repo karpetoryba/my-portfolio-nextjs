@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
 export default function Footer() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -21,38 +24,20 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact Me Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a 
-                  href="#about" 
-                  onClick={(e) => handleNavClick(e, "about")}
-                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
-                >
-                  About Me
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#projects" 
-                  onClick={(e) => handleNavClick(e, "projects")}
-                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#contact" 
-                  onClick={(e) => handleNavClick(e, "contact")}
-                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <h3 className="text-lg font-semibold mb-4">Contact Me</h3>
+            <p className="text-neutral-600 mb-4">
+              If you're interested in collaboration, feel free to reach out.
+            </p>
+            <Link href="/contact">
+              <Button 
+                className="bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 transition-all duration-200"
+                variant="default"
+              >
+                Get in Touch
+              </Button>
+            </Link>
           </div>
 
           {/* Social Links */}
