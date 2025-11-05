@@ -22,8 +22,8 @@ export default function ContactPage() {
               <div className="mt-3 h-2 w-40 rounded-full bg-white/60 blur-md" />
             </div>
             <a
-              href="/Karpenko_Daria_CV.png"
-              download="Karpenko_Daria_CV.png"
+              href="/Karpenko_Daria_CV_.png"
+              download="Karpenko_Daria_CV_.png"
               className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/60 backdrop-blur-sm border border-neutral-200/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 group"
               aria-label="Download CV"
             >
