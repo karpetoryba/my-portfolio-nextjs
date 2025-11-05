@@ -1,43 +1,58 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/30 border-b border-neutral-100">
       <nav className="mx-auto flex w-full items-center justify-between px-4 sm:px-6 py-3 sm:py-5 max-w-7xl">
-        <Link href="/" className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-80 transition-opacity">
+        <a 
+          href="#home" 
+          onClick={(e) => handleNavClick(e, "home")}
+          className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-80 transition-opacity cursor-pointer"
+        >
           Portfolio
-        </Link>
+        </a>
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10 text-sm lg:text-base font-medium">
           <li>
-            <Link 
-              href="/about" 
-              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
+            <a 
+              href="#about" 
+              onClick={(e) => handleNavClick(e, "about")}
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all cursor-pointer"
             >
               About me
-            </Link>
+            </a>
           </li>
           <li>
-            <Link 
-              href="/projects" 
-              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
+            <a 
+              href="#projects" 
+              onClick={(e) => handleNavClick(e, "projects")}
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all cursor-pointer"
             >
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link 
-              href="/contact" 
-              className="text-neutral-700 hover:text-black hover:font-bold transition-all"
+            <a 
+              href="#contact" 
+              onClick={(e) => handleNavClick(e, "contact")}
+              className="text-neutral-700 hover:text-black hover:font-bold transition-all cursor-pointer"
             >
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
         {/* Mobile Menu Button */}
@@ -54,31 +69,31 @@ export default function Navbar() {
         <div className="md:hidden border-t border-neutral-100 bg-white/95 backdrop-blur-md">
           <ul className="flex flex-col px-4 py-4 gap-4">
             <li>
-              <Link 
-                href="/about" 
-                onClick={() => setIsOpen(false)}
-                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
+              <a 
+                href="#about" 
+                onClick={(e) => handleNavClick(e, "about")}
+                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2 cursor-pointer"
               >
                 About me
-              </Link>
+              </a>
             </li>
             <li>
-              <Link 
-                href="/projects" 
-                onClick={() => setIsOpen(false)}
-                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
+              <a 
+                href="#projects" 
+                onClick={(e) => handleNavClick(e, "projects")}
+                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2 cursor-pointer"
               >
                 Projects
-              </Link>
+              </a>
             </li>
             <li>
-              <Link 
-                href="/contact" 
-                onClick={() => setIsOpen(false)}
-                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2"
+              <a 
+                href="#contact" 
+                onClick={(e) => handleNavClick(e, "contact")}
+                className="block text-neutral-700 hover:text-black hover:font-bold transition-all py-2 cursor-pointer"
               >
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

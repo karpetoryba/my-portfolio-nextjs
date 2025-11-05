@@ -1,6 +1,14 @@
-import Link from "next/link";
+"use client";
 
 export default function Footer() {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <footer className="border-t border-neutral-200 bg-white mt-12">
       <div className="container mx-auto px-4 py-12">
@@ -18,19 +26,31 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="#about" 
+                  onClick={(e) => handleNavClick(e, "about")}
+                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
+                >
                   About Me
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/projects" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="#projects" 
+                  onClick={(e) => handleNavClick(e, "projects")}
+                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
+                >
                   Projects
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="text-neutral-600 hover:text-black transition-colors">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleNavClick(e, "contact")}
+                  className="text-neutral-600 hover:text-black transition-colors cursor-pointer"
+                >
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
