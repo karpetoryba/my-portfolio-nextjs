@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [scrollBlur, setScrollBlur] = useState(0);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +40,60 @@ export default function Home() {
     handleScroll(); // Call immediately for initial position
 
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Intersection Observer for About section animation
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsAboutVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+
+    return () => {
+      if (aboutSection) {
+        observer.unobserve(aboutSection);
+      }
+    };
+  }, []);
+
+  // Intersection Observer for Projects section animation
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsProjectsVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      observer.observe(projectsSection);
+    }
+
+    return () => {
+      if (projectsSection) {
+        observer.unobserve(projectsSection);
+      }
+    };
   }, []);
 
   return (
@@ -83,7 +139,14 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section id="about" className="relative container mx-auto px-4 py-16">
+      <section 
+        id="about" 
+        className={`relative container mx-auto px-4 py-16 transition-all duration-1000 ease-out ${
+          isAboutVisible 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         {/* Background accents */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           {/* soft grid overlay with fade */}
@@ -199,7 +262,14 @@ export default function Home() {
       </section>
 
       {/* View Projects section */}
-      <section id="projects" className="container mx-auto px-4 py-16">
+      <section 
+        id="projects" 
+        className={`container mx-auto px-4 py-16 transition-all duration-1000 ease-out ${
+          isProjectsVisible 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">View Projects</h1>
           <p className="text-xl text-neutral-600 mb-8">
