@@ -1,9 +1,29 @@
+'use client';
+
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { Mail, Linkedin, Github } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ContactPage() {
   const email = "daria.karpenko@mail-esd.com";
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const [introVisible, setIntroVisible] = useState(false);
+  const [linksVisible, setLinksVisible] = useState(false);
+  const [availabilityVisible, setAvailabilityVisible] = useState(false);
+
+  useEffect(() => {
+    const timeouts = [
+      setTimeout(() => setHeaderVisible(true), 80),
+      setTimeout(() => setIntroVisible(true), 160),
+      setTimeout(() => setLinksVisible(true), 260),
+      setTimeout(() => setAvailabilityVisible(true), 360),
+    ];
+
+    return () => {
+      timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    };
+  }, []);
 
   return (
     <>
@@ -15,7 +35,11 @@ export default function ContactPage() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="mb-10 flex items-center justify-between">
+          <div
+            className={`mb-10 flex items-center justify-between transition-all duration-700 ease-out ${
+              headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
             <div>
               <h1 className="text-5xl font-bold leading-[1.05] tracking-tight">Contact</h1>
               {/* glowing underline */}
@@ -35,7 +59,11 @@ export default function ContactPage() {
           </div>
           
           <div className="space-y-8">
-            <div>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
               <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
               <p className="text-lg leading-relaxed text-neutral-600">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
@@ -43,7 +71,11 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="space-y-3 pt-8">
+            <div
+              className={`space-y-3 pt-8 transition-all duration-700 ease-out ${
+                linksVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
               <a 
                 href={`mailto:${email}`}
                 className="group flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
@@ -72,7 +104,11 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8">
+          <div
+            className={`mt-12 pt-8 transition-all duration-700 ease-out ${
+              availabilityVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
             <h2 className="text-3xl font-semibold mb-4">Availability</h2>
             <div className="rounded-xl border border-neutral-200/70 bg-white/60 backdrop-blur-sm p-6 shadow-sm">
               <p className="text-lg text-neutral-600">

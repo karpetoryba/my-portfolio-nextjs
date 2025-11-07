@@ -1,3 +1,5 @@
+'use client';
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import drunkSanta from "../../../public/Drunk_santa.png";
 import Link from "next/link";
@@ -43,65 +45,92 @@ export default function ProjectsPage() {
       tech: ["Next.js", "Prisma", "TypeScript", "Phaser 3" , "Docker Compose", "Supabase JS"],
     },
   ];
+  const [headingVisible, setHeadingVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    const timeouts = [
+      setTimeout(() => setHeadingVisible(true), 80),
+      setTimeout(() => setCardsVisible(true), 180),
+    ];
+
+    return () => {
+      timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    };
+  }, []);
 
   return (
     <>
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto mb-8 md:mb-12">
-          <h1 className="text-5xl font-bold mb-4">Projects</h1>
-          <p className="text-xl text-neutral-600 mb-12">
-            Here are some of my recent projects and works
-          </p>
+          <div
+            className={`transition-all duration-700 ease-out ${
+              headingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            <h1 className="text-5xl font-bold mb-4">Projects</h1>
+            <p className="text-xl text-neutral-600 mb-12">
+              Here are some of my recent projects and works
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <div className="relative w-full h-56 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-base mb-4">
-                    {project.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                className={`transition-all duration-700 ease-out ${
+                  cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: cardsVisible ? `${index * 120 + 120}ms` : "0ms" }}
+              >
+                <Card className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="relative w-full h-56 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
                   </div>
-                </CardContent>
-                <CardFooter className="flex gap-3">
-                  <Link href={project.link} className="flex-1">
-                    <Button 
-                      className="w-full bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 active:scale-[0.98] transition-all duration-200" 
-                      variant="default"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                  <Link href={project.github}>
-                    <Button 
-                      variant="outline" 
-                      size="icon"
-                      className="group bg-neutral-200/50 backdrop-blur-sm hover:scale-110 active:scale-95 transition-transform duration-200"
-                    >
-                      <Github className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <CardDescription className="text-base mb-4">
+                      {project.description}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex gap-3">
+                    <Link href={project.link} className="flex-1">
+                      <Button 
+                        className="w-full bg-neutral-200/50 backdrop-blur-sm text-black hover:bg-neutral-300/60 active:scale-[0.98] transition-all duration-200" 
+                        variant="default"
+                      >
+                        View Project
+                      </Button>
+                    </Link>
+                    <Link href={project.github}>
+                      <Button 
+                        variant="outline" 
+                        size="icon"
+                        className="group bg-neutral-200/50 backdrop-blur-sm hover:scale-110 active:scale-95 transition-transform duration-200"
+                      >
+                        <Github className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
